@@ -11,6 +11,7 @@ import (
 	"strings"
 
 	"github.com/charmbracelet/huh"
+	"github.com/fatih/color"
 	"github.com/gocolly/colly"
 )
 
@@ -137,10 +138,23 @@ func main() {
 
 	desc := get_bird_info(resultMap[bird])
 
+	color.Cyan(desc[0])
+	fmt.Printf("\n")
+
+	var redirection string = "t"
 	huh.NewForm(
 		huh.NewGroup(
-			huh.NewConfirm().
-				Title(desc[0]),
+			huh.NewSelect[string]().
+				Options(
+					huh.NewOption("Aller sur oiseau.net ?", "true"),
+					huh.NewOption("Quitter", "false"),
+				).
+				Value(&redirection).
+				Title("Fini ?"),
 		),
 	).Run()
+
+	if redirection == "true" {
+		fmt.Println(resultMap[bird])
+	}
 }
