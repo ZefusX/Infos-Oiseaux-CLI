@@ -114,7 +114,7 @@ func main() {
 
 	title_list := []string{}
 	for title := range resultMap {
-		if strings.Contains(title, "-") && strings.Count(title, "-") == 1 && !strings.Contains(title, "Photos") && !strings.Contains(title, " : ") && !strings.Contains(title, ".net") {
+		if strings.Contains(title, "-") && !strings.Contains(title, "Coloriage") && !strings.Contains(title, "Photos") && !strings.Contains(title, " : ") && !strings.Contains(title, ".net") {
 			if !numberRegex.MatchString(title) {
 				title_list = append(title_list, title)
 			}
