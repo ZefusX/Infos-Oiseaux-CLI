@@ -27,7 +27,7 @@ func get_search_results(bird string) Results {
 
 	client := &http.Client{}
 
-	req, err := http.NewRequest("GET", string("https://cse.google.com/cse/element/v1?rsz=filtered_cse&num=10&hl=fr&source=gcsc&gss=.com&cselibv=8435450f13508ca1&cx=014496470795211077046%3AWMX431797713&q="+string(bird)+"&safe=off&cse_tok=AB-tC_7g-yFwYyx0deIBSf94gXCY%3A1709311385919&exp=cc&fexp=72497452&callback=google.search.cse.api7554"), nil)
+	req, err := http.NewRequest("GET", string("https://cse.google.com/cse/element/v1?rsz=filtered_cse&num=10&hl=fr&source=gcsc&gss=.com&cselibv=8435450f13508ca1&cx=014496470795211077046%3AWMX431797713&q="+string(bird)+"&safe=off&cse_tok=AB-tC_7UDdD4DI8L-8nS83voVySV%3A1709402803671&exp=cc&fexp=72497452&callback=google.search.cse.api9085"), nil)
 	if err != nil {
 		log.Fatal(err)
 	}
